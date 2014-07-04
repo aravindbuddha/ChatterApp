@@ -10,6 +10,15 @@
 		CH.api('users','get',{},function(data){
 			console.log(data);
 		});
+
+		CH.api('users','post',{
+			"Name":"dimpua",
+			"Email":"aravid.budha@mediau.com",
+			"Pass":"arad",
+			"isonline":1
+		},function(data){
+			console.log(data);
+		});
 	</script>
 </head>
 <body>

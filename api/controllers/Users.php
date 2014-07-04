@@ -15,7 +15,15 @@ class Users{
 		echo json_encode($out);
 	}
 	function post($data){
-
+		print_r($data);
+		$sql="INSERT INTO users(Name,Email,Pass,isonline) VALUES ('".$data['Name']."', '".$data['Email']."', '".$data['Pass']."', '".$data['isonline']."')";
+		$result=mysql_query($sql);
+		if($result){
+			echo json_encode(array(
+				"msg"=>"ok"
+			));
+		}		
+		
 	}
 	function update($dat){
 
