@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Chatter App</title>
+	<link rel="stylesheet" type="text/css" href="asserts/css/style.css">
+	<script type="text/javascript" src="js/lib/jquery.js"></script>
+	<script type="text/javascript" src="js/app/app.js"></script>
+	<script type="text/javascript" src="js/app/api.js"></script>
+	<script type="text/javascript">
+		CH.api('users','get',{},function(data){
+			console.log(data);
+		});
+	</script>
+</head>
+<body>
+
+</body>
+</html>
