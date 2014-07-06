@@ -3,7 +3,34 @@
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)/(.*)/(.*)$ index.php?controller=$1&action=$2&id=$3 [PT,L]
+
+
+
+#any type of
+RewriteRule ^(.*)$ index.php?param=$1 [PT,L]
+
+
+
+
+
+
+
+#api/users
+#RewriteRule ^(.*)$ index.php?class=$1&method=get&format=json [PT,L]
+
+
+#api/user.json
+#RewriteRule ^(.*)\.(html|json|xml)?$ index.php?param=$1&method=get&format=$2 [PT,L]
+
+#api/user/insert.json
+#RewriteRule ^(.*)/(.*)\.(html|json|xml)?$ index.php?class=$1&method=$2&format=$3 [PT,L]
+
+#api/user/get/1.json
+RewriteRule ^(.*)/(.*)/(.*)\.(html|json|xml)?$ index.php?class=$1&method=$2&id=$3&format=$4 [PT,L]
+
  
+
+
+
 </IfModule>
 
